@@ -46,6 +46,16 @@
 
     <title>Metro Cebu Businessmen and Professionals (MCBP)</title>
     <script>
+      // Restore the original path after GitHub 404 redirect
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const path = params.get("p");
+        if (path) {
+          window.history.replaceState(null, null, path);
+        }
+      })();
+    </script>
+    <script>
       // Fix Supabase OAuth / invite links with HashRouter on GitHub Pages
       (function () {
         const hash = window.location.hash;
